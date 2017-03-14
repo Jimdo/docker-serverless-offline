@@ -18,4 +18,5 @@ RUN echo "===> clean up..."  && \
     rm -rf /var/lib/apt/lists/*
 
 RUN echo "===> install serverless command"  && \
-    npm install -g serverless
+    npm install -g serverless serverless-dynamodb-local && \
+    sls dynamodb install
