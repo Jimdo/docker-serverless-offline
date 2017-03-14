@@ -17,9 +17,13 @@ RUN echo "===> clean up..."  && \
     apt-get clean  && \
     rm -rf /var/lib/apt/lists/*
 
+RUN mkdir -p /usr/src/app
+
 RUN echo "===> install serverless command"  && \
     npm install -g serverless  && \
-    echo "===> install dynamodb"  && \
+    echo "===> install dynamodb package"  && \
+    cd /usr/src/app && \
     npm install dynamodb-localhost && \
-    node -e " var dynamodbLocal = require('dynamodb-localhost'); \
-              dynamodbLocal.install(function() {});"
+    echo "===> install dynamodb"  && \
+    node -e "var dynamodbLocal = require('dynamodb-localhost'); \
+             dynamodbLocal.install(function() {});"
