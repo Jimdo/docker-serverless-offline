@@ -1,4 +1,4 @@
-FROM nodesource/jessie:4.3.2
+FROM node:latest
 
 RUN \
     echo "===> add webupd8 repository..."  && \
