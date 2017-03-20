@@ -26,4 +26,7 @@ RUN echo "===> install serverless command"  && \
     npm install dynamodb-localhost && \
     echo "===> install dynamodb"  && \
     node -e "var dynamodbLocal = require('dynamodb-localhost'); \
-             dynamodbLocal.install(function() {});"
+             dynamodbLocal.install(function() {});" && \
+    echo "===> install pm2 monitor"  && \
+    npm install -g pm2
+    
