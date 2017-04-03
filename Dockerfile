@@ -1,4 +1,4 @@
-FROM node:latest
+FROM node:6.10
 
 RUN \
     echo "===> add webupd8 repository..."  && \
